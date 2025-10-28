@@ -6,9 +6,11 @@ interface StatusChartProps {
 }
 
 const COLORS = {
+  deliver: "hsl(150 100% 50%)", // success green for delivered
+  "in process": "hsl(280 100% 65%)", // accent purple for in process
+  inprocess: "hsl(280 100% 65%)", // accent purple (alternate format)
   completed: "hsl(150 100% 50%)", // success green
-  pending: "hsl(280 100% 65%)", // accent purple
-  inProgress: "hsl(180 100% 50%)", // primary cyan
+  pending: "hsl(40 100% 60%)", // warning yellow
   cancelled: "hsl(0 85% 60%)", // destructive red
 };
 
@@ -40,12 +42,12 @@ export const StatusChart = ({ data }: StatusChartProps) => {
           animationDuration={800}
         >
           {chartData.map((entry, index) => {
-            const colorKey = entry.name.toLowerCase().replace(' ', '') as keyof typeof COLORS;
+            const colorKey = entry.name.toLowerCase() as keyof typeof COLORS;
             return (
               <Cell 
                 key={`cell-${index}`} 
-                fill={COLORS[colorKey] || COLORS.pending}
-                stroke="hsl(240 10% 5%)"
+                fill={COLORS[colorKey] || COLORS["in process"]}
+                stroke="hsl(0 0% 0%)"
                 strokeWidth={2}
               />
             );
