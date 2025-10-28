@@ -48,7 +48,7 @@ const Index = () => {
             <h1 className="text-4xl md:text-5xl font-bold glow-text text-primary mb-2 animate-float">
               Client Analytics Dashboard
             </h1>
-            <p className="text-muted-foreground">Real-time insights from your photography business</p>
+            <p className="text-muted-foreground">Real-time analysis and Client management</p>
           </div>
           <Button 
             onClick={() => refetch()} 
