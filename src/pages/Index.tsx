@@ -4,6 +4,7 @@ import { ChartCard } from "@/components/ChartCard";
 import { StatusChart } from "@/components/StatusChart";
 import { RevenueChart } from "@/components/RevenueChart";
 import { ClientsTable } from "@/components/ClientsTable";
+import { ChatBot } from "@/components/ChatBot";
 import { DollarSign, Users, Camera, TrendingUp, RefreshCw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -129,6 +130,9 @@ const Index = () => {
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-[100px] animate-float" style={{ animationDelay: '1s' }} />
         <div className="absolute top-1/2 right-1/3 w-96 h-96 bg-accent/10 rounded-full blur-[100px] animate-float" style={{ animationDelay: '2s' }} />
       </div>
+
+      {/* Chatbot */}
+      <ChatBot />
     </div>
   );
 };
