@@ -53,10 +53,37 @@ export const ChatBot = () => {
         throw new Error("Failed to get response from webhook");
       }
 
-      const data = await response.json();
+      const contentType = response.headers.get("content-type");
+      let messageContent = "";
+
+      // Try to parse as JSON first, fallback to plain text
+      if (contentType?.includes("application/json")) {
+        try {
+          const data = await response.json();
+          // Handle different response formats
+          if (Array.isArray(data) && data[0]?.output) {
+            messageContent = data[0].output;
+          } else if (data.output) {
+            messageContent = data.output;
+          } else if (data.message) {
+            messageContent = data.message;
+          } else if (data.response) {
+            messageContent = data.response;
+          } else {
+            messageContent = JSON.stringify(data);
+          }
+        } catch (jsonError) {
+          // If JSON parsing fails, treat as plain text
+          messageContent = await response.text();
+        }
+      } else {
+        // Plain text response
+        messageContent = await response.text();
+      }
+
       const assistantMessage: Message = {
         role: "assistant",
-        content: data.message || data.response || JSON.stringify(data),
+        content: messageContent,
         timestamp: new Date(),
       };
 
