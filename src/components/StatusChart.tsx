@@ -58,7 +58,8 @@ export const StatusChart = ({ data }: StatusChartProps) => {
             backgroundColor: 'hsl(240 15% 8% / 0.95)', 
             border: '1px solid hsl(180 100% 50% / 0.3)',
             borderRadius: '8px',
-            backdropFilter: 'blur(10px)'
+            backdropFilter: 'blur(10px)',
+            color: 'hsl(180 100% 90%)'
           }}
         />
         <Legend 

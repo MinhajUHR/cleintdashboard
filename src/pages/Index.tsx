@@ -70,7 +70,7 @@ const Index = () => {
             title="Total Revenue"
             value={`$${totalRevenue.toLocaleString()}`}
             icon={DollarSign}
-            color="success"
+            color="primary"
             trend="+12% from last month"
             trendUp
           />
@@ -86,14 +86,14 @@ const Index = () => {
             title="Total Headshots"
             value={totalHeadshots}
             icon={Camera}
-            color="accent"
+            color="primary"
             trend={`${(totalHeadshots / totalClients).toFixed(1)} avg per client`}
           />
           <StatCard
             title="Avg Revenue"
             value={`$${avgRevenue.toFixed(0)}`}
             icon={TrendingUp}
-            color="secondary"
+            color="primary"
             trend="Per client"
           />
         </div>
