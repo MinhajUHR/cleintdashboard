@@ -47,7 +47,7 @@ export const ChatBot = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch("https://minhajuhr.app.n8n.cloud/webhook-test/sheetacess", {
+      const response = await fetch("https://minhajuhr.app.n8n.cloud/webhook/sheetacess", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
