@@ -61,6 +61,12 @@ export const StatusChart = ({ data }: StatusChartProps) => {
             backdropFilter: 'blur(10px)',
             color: 'hsl(180 100% 90%)'
           }}
+          itemStyle={{
+            color: 'hsl(180 100% 90%)'
+          }}
+          labelStyle={{
+            color: 'hsl(180 100% 90%)'
+          }}
         />
         <Legend 
           wrapperStyle={{ 
